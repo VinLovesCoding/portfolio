@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vin | Mobile &amp; Web Developer</title>
+<meta name="description" content="Portfolio of Vin, BSIT student specializing in mobile web development.">
+<script>
+  (function(){
+    var t = null;
+    try { t = localStorage.getItem("theme"); } catch(e) {}
+    if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F7FB; --surface:#FFFFFF; --text:#14151C; --muted:#5B5F73; --line:#DDE0EC;
+  --accent:#5B2EE0; --accent-text:#FFFFFF; --mint:#0E9F73;
+}
+[data-theme="dark"]{
+  --bg:#0D0F16; --surface:#161924; --text:#ECEDF4; --muted:#9A9EB5; --line:#272B3B;
+  --accent:#A58BFF; --accent-text:#0D0F16; --mint:#3DDBA4;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 "Source Sans 3",system-ui,sans-serif;transition:background .25s,color .25s}
+h1,h2,h3{font-family:"Sora",sans-serif;margin:0;line-height:1.1}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+
+.layout{display:block}
+@media(min-width:960px){.layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh}}
+
+  aside{padding:1.25rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+@media(min-width:960px){
+  aside{position:sticky;top:0;height:100vh;flex-direction:column;align-items:flex-start;justify-content:space-between;padding:2.5rem 2rem;border-bottom:0;border-right:1px solid var(--line)}
+}
+.brand{font:800 1.3rem "Sora",sans-serif;text-decoration:none;color:var(--text)}
+aside nav{display:flex;gap:1rem}
+@media(min-width:960px){aside nav{flex-direction:column;gap:.6rem}}
+aside nav a{color:var(--text);text-decoration:none;font-weight:600}
+aside nav a:hover{color:var(--accent)}
+.toggle{display:inline-flex;align-items:center;gap:.5rem;background:var(--surface);color:var(--text);border:1.5px solid var(--line);border-radius:999px;padding:.4rem .9rem;font:600 .9rem "Source Sans 3",sans-serif;cursor:pointer}
+.toggle:hover{border-color:var(--accent)}
+.toggle .dot{width:.9rem;height:.9rem;border-radius:50%;background:var(--accent);box-shadow:inset -.3rem -.1rem 0 0 var(--surface)}
+[data-theme="dark"] .toggle .dot{box-shadow:none}
+
+main{padding:0 1.25rem 3rem;max-width:860px}
+@media(min-width:960px){main{padding:0 4rem 4rem}}
+.hero{padding:4rem 0 3.5rem}
+.hero .name{font-size:clamp(5rem,22vw,11rem);font-weight:800;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:2px var(--text)}
+.hero p{max-width:34rem;font-size:1.2rem;color:var(--muted);margin:1.25rem 0 1.75rem}
+.hero .intro{display:flex;flex-direction:column;gap:1.5rem;align-items:flex-start;margin-top:1.25rem}
+@media(min-width:700px){.hero .intro{flex-direction:row;align-items:center;gap:2rem}}
+.hero .intro p{margin:0 0 1.25rem}
+.me{width:160px;height:160px;object-fit:cover;object-position:center top;border-radius:50%;border:4px solid var(--accent);background:var(--surface);flex:none}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-text);padding:.8rem 1.4rem;border-radius:.6rem;font-weight:600;text-decoration:none}
+.btn:hover{filter:brightness(1.1)}
+
+section{padding:3rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:1.5rem}
+
+.projects{display:grid;gap:1.25rem}
+@media(min-width:700px){.projects{grid-template-columns:1fr 1fr}.projects .wide{grid-column:span 2}}
+.tile{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--accent);border-radius:.4rem;padding:1.4rem}
+.tile:nth-child(2){border-top-color:var(--mint)}
+.tile:nth-child(3){border-top-color:var(--text)}
+.tile h3{font-size:1.25rem;margin-bottom:.35rem}
+.tile .stack{color:var(--muted);font-size:.95rem;margin-bottom:.75rem}
+.tile p{margin:0 0 .75rem}
+.tile a{font-weight:600}
+.soon{display:inline-block;border:1px dashed var(--muted);border-radius:.4rem;padding:.15rem .6rem;color:var(--muted);font-size:.9rem;font-weight:600}
+
+.skills{display:flex;flex-wrap:wrap;gap:.6rem;padding:0;margin:1.25rem 0 0;list-style:none}
+.skills li{background:var(--surface);border:1px solid var(--line);border-radius:.4rem;padding:.35rem .85rem;font-weight:600;font-size:.95rem}
+
+footer{color:var(--muted);font-size:.95rem;padding-top:2rem}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <a class="brand" href="#top">Vin</a>
+    <nav aria-label="Main">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="toggle" id="themeToggle" type="button" aria-label="Switch color theme">
+      <span class="dot" aria-hidden="true"></span><span id="themeLabel">Dark mode</span>
+    </button>
+  </aside>
+
+  <main id="top">
+    <div class="hero">
+      <h1 class="name">Vin</h1>
+      <div class="intro">
+        <img class="me" src="vin.jpg" alt="Photo of Vin" width="160" height="160">
+        <div>
+          <p>BSIT student building mobile-friendly web apps. I like projects that solve real problems for real people.</p>
+          <a class="btn" href="#projects">View my work</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article class="tile wide">
+          <h3>VinGadgetPlug</h3>
+          <div class="stack">Add your tech stack</div>
+          <p>VinGadgetPlug is a database-driven e-commerce web application designed and developed as an academic project to simulate a modern online gadget store. The platform provides a seamless shopping experience for users looking to browse, filter, and purchase mobile devices and tech accessories, complete with a secure checkout workflow and administrative management capabilities.</p>
+          <span class="soon">Live demo: coming soon</span>
+        </article>
+        <article class="tile">
+          <h3>Coming soon</h3>
+          <div class="stack">In progress</div>
+          <p>A new project is on the way.</p>
+        </article>
+        <article class="tile">
+          <h3>Coming soon</h3>
+          <div class="stack">In progress</div>
+          <p>A new project is on the way.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p style="max-width:38rem">I'm a 3rd-year Information Technology student at National University Manila, specializing in mobile web development. My coursework includes systems integration and architecture and advanced networking, including static, default, floating static, and dynamic routing.</p>
+      <ul class="skills">
+        <li>HTML &amp; CSS</li>
+        <li>JavaScript</li>
+        <li>Android Studio</li>
+        <li>Git &amp; GitHub</li>
+        <li>Networking</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Open to internships and collaborations.</p>
+      <p>
+        <a href="mailto:vinstephensantos07@gmail.com">vinstephensantos07@gmail.com</a><br>
+        <a href="https://github.com/VinLovesCoding">GitHub: VinLovesCoding</a>
+      </p>
+    </section>
+
+    <footer>&copy; 2026 Vin</footer>
+  </main>
+</div>
+
+<script>
+  var root = document.documentElement;
+  var btn = document.getElementById("themeToggle");
+  var label = document.getElementById("themeLabel");
+
+  function paint(){
+    var dark = root.getAttribute("data-theme") === "dark";
+    label.textContent = dark ? "Light mode" : "Dark mode";
+  }
+  btn.addEventListener("click", function(){
+    var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch(e) {}
+    paint();
+  });
+  paint();
+</script>
+</body>
+</html>
